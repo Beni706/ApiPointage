@@ -1,6 +1,8 @@
 import express from 'express';
-// Import de toutes les fonctions du controller du fichier apprenantController.js
 import apprenantRoutes from './routes/apprenantRoutes.js';
+import enseignantRoutes from './routes/enseignantRoutes.js';
+import administrateurRoutes from './routes/administrateurRoutes.js';
+import presenceRoutes from './routes/presenceRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -13,8 +15,11 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// Utiliser les routes apprenant
-app.use('/apprenants', apprenantRoutes);
+// Utilisation des routes
+app.use('/apprenant', apprenantRoutes);
+app.use('/enseignant', enseignantRoutes);
+app.use('/administrateur', administrateurRoutes);
+app.use('/presence', presenceRoutes);
 
 // Le serveur écoute sur le port défini
 app.listen(port, () => {
