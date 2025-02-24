@@ -7,8 +7,8 @@ import presenceRoutes from './routes/presenceRoutes.js';
 const app = express();
 const port = 3000;
 
-app.use(express.json()); // Middleware to parse JSON bodies
-app.use(express.urlencoded({ extended: true })); // Middleware to parse x-www-form-urlencoded bodies
+app.use(express.json()); // Middleware pour analyser les corps JSON
+app.use(express.urlencoded({ extended: true })); // Middleware pour analyser les corps x-www-form-urlencoded
 
 // Route principale de notre API
 app.get('/', (req, res) => {
